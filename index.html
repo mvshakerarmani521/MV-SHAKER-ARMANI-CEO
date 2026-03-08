@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MV SHAKER ARMANI | CYBER CEO</title>
+    <style>
+        :root {
+            --neon: #00ff41;
+            --danger: #ff003c;
+            --bg: #000a00;
+        }
+
+        * { box-sizing: border-box; }
+        body, html {
+            margin: 0; padding: 0;
+            background-color: var(--bg);
+            color: var(--neon);
+            font-family: 'Courier New', monospace;
+            overflow-x: hidden;
+        }
+
+        canvas { position: fixed; inset: 0; z-index: -1; opacity: 0.15; }
+
+        /* Lock Screen */
+        #lock-screen {
+            position: fixed; inset: 0; background: black;
+            display: flex; justify-content: center; align-items: center;
+            z-index: 10000; transition: 1.5s ease-in-out;
+        }
+
+        .terminal {
+            width: 400px; padding: 40px; border: 1px solid var(--neon);
+            box-shadow: 0 0 30px var(--neon); text-align: center;
+            background: rgba(0, 10, 0, 0.9);
+        }
+
+        input {
+            background: transparent; border: 1px solid var(--neon);
+            color: var(--neon); width: 100%; padding: 15px;
+            text-align: center; font-size: 18px; outline: none; margin: 20px 0;
+        }
+
+        .btn-unlock {
+            background: var(--neon); color: black; border: none;
+            padding: 15px; width: 100%; font-weight: bold; cursor: pointer;
+        }
+
+        /* Dashboard */
+        #main-content { display: none; opacity: 0; transition: 2s; }
+
+        header {
+            text-align: center; padding: 50px;
+            border-bottom: 2px solid var(--neon);
+            background: linear-gradient(180deg, #002200, #000);
+        }
+
+        .container {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px; padding: 30px; max-width: 1600px; margin: auto;
+        }
+
+        .box {
+            background: rgba(0, 20, 0, 0.8); border: 1px solid rgba(0, 255, 65, 0.2);
+            padding: 20px; position: relative; transition: 0.3s;
+        }
+
+        .box:hover { border-color: var(--neon); box-shadow: 0 0 20px rgba(0, 255, 65, 0.2); }
+
+        .box h3 {
+            font-size: 1.1rem; border-bottom: 1px solid var(--neon);
+            padding-bottom: 10px; margin-top: 0; color: #fff;
+        }
+
+        .link {
+            display: block; text-decoration: none; color: var(--neon);
+            padding: 10px; background: rgba(0, 255, 65, 0.05);
+            margin: 6px 0; border: 1px solid rgba(0, 255, 65, 0.1);
+            font-size: 13px; transition: 0.2s;
+        }
+
+        .link:hover { background: var(--neon); color: black; padding-left: 20px; }
+
+        .scan-line {
+            position: absolute; width: 100%; height: 2px;
+            background: var(--neon); opacity: 0.3; animation: scan 4s linear infinite;
+        }
+
+        @keyframes scan { 0% { top: 0; } 100% { top: 100%; } }
+
+        footer { text-align: center; padding: 50px; color: #444; font-size: 12px; }
+    </style>
+</head>
+<body>
+
+    <canvas id="matrix"></canvas>
+
+    <div id="lock-screen">
+        <div class="terminal">
+            <div style="color:var(--danger); animation:blink 0.5s infinite;">{ ACCESS RESTRICTED CYBER CEO }</div>
+            <input type="password" id="pass" placeholder="PASSWORD">
+            <button class="btn-unlock" onclick="unlock()">UNLOCK</button>
+        </div>
+    </div>
+
+    <div id="main-content">
+        <header>
+            <h1 style="letter-spacing: 5px;">MV SHAKER ARMANI CEO</h1>
+            <p>ARMANI CYBER CRIME REPORTING CENTER</p>
+            <p>Call Me Any Help..? <br> https://wa.me/8801880644914</p>
+        </header>
+
+        <div class="container">
+            <div class="box">
+                <div class="scan-line"></div>
+                <h3>🚨 Priority Report Forms</h3>
+                <a href="https://m.facebook.com/help/contact/1866954787329282/?wtsid=rdr_03Jc3onxEH4rmwWRW&_rdr" class="link">FB: Account Issue 1</a>
+                <a href="https://www.facebook.com/help/contact/467998746305653" class="link">FB: Account Issue 2</a>
+                <a href="https://help.meta.com/requests/964979375803412/" class="link">Meta: Request Status</a>
+                <a href="https://www.facebook.com/help/contact/295309487309948" class="link">Imposter Report Form</a>
+                <a href="https://www.facebook.com/help/contact/164405897002583" class="link">Defamation Report Form</a>
+            </div>
+
+            <div class="box">
+                <div class="scan-line"></div>
+                <h3>🔐 Phishing & Malware</h3>
+                <a href="#" class="link">Report Phishing Link</a>
+                <a href="#" class="link">Report Unsafe Site</a>
+                <a href="#" class="link">Virus & Malware Checker</a>
+                <a href="#" class="link">Report Phishing Government</a>
+            </div>
+
+            <div class="box">
+                <div class="scan-line"></div>
+                <h3>📘 Facebook Reports</h3>
+                <a href="#" class="link">Imposter Account</a>
+                <a href="#" class="link">Defamation</a>
+                <a href="#" class="link">Trademark</a>
+                <a href="#" class="link">Violations</a>
+                <a href="#" class="link">Sex Offender</a>
+                <a href="#" class="link">Something Else</a>
+                <a href="#" class="link">Child Account</a>
+                <a href="#" class="link">Group Report</a>
+                <a href="#" class="link">Page Report</a>
+                <a href="#" class="link">18+ Content</a>
+                <a href="#" class="link">Abusive</a>
+                <a href="#" class="link">Child Safety</a>
+                <a href="#" class="link">Copyright</a>
+            </div>
+
+            <div class="box">
+                <div class="scan-line"></div>
+                <h3>📸 Instagram Reports</h3>
+                <a href="#" class="link">Defamation</a>
+                <a href="#" class="link">Threads</a>
+                <a href="#" class="link">Violations</a>
+                <a href="#" class="link">Legal Removal</a>
+                <a href="#" class="link">Grievance</a>
+                <a href="#" class="link">Imposter</a>
+                <a href="#" class="link">Sex Offender</a>
+                <a href="#" class="link">Something Else</a>
+                <a href="#" class="link">Child Under 13</a>
+                <a href="#" class="link">Abuse</a>
+                <a href="#" class="link">Copyright</a>
+            </div>
+
+            <div class="box">
+                <div class="scan-line"></div>
+                <h3>🎵 TikTok Reports</h3>
+                <a href="#" class="link">Account Report</a>
+                <a href="#" class="link">Report a Problem</a>
+                <a href="#" class="link">Content Violation</a>
+                <a href="#" class="link">Abuse</a>
+                <a href="#" class="link">Bullying</a>
+                <a href="#" class="link">Copyright</a>
+                <a href="#" class="link">Impersonation</a>
+                <a href="#" class="link">Under Age</a>
+            </div>
+
+            <div class="box">
+                <div class="scan-line"></div>
+                <h3>🔴 YouTube & Google</h3>
+                <a href="https://support.google.com/youtube/answer/2802027" class="link">YouTube: Report Content</a>
+                <a href="https://support.google.com/youtube/contact/copyright_webform" class="link">YouTube: Copyright</a>
+                <a href="https://support.google.com/youtube/contact/privacy2" class="link">YouTube: Privacy</a>
+                <a href="https://support.google.com/legal/troubleshooter/1114905" class="link">Google: Legal Removal</a>
+                <a href="https://support.google.com/legal/contact/lr_dmca" class="link">Google: DMCA</a>
+                <a href="https://safebrowsing.google.com/safebrowsing/report_phish/" class="link">Google: Phishing</a>
+            </div>
+
+            <div class="box">
+                <div class="scan-line"></div>
+                <h3>💬 Telegram & WhatsApp</h3>
+                <a href="https://telegram.org/support" class="link">Telegram Support</a>
+                <a href="mailto:abuse@telegram.org" class="link">Telegram Abuse Email</a>
+                <a href="https://www.whatsapp.com/contact/" class="link">WhatsApp Contact</a>
+                <a href="https://www.whatsapp.com/legal/report" class="link">WhatsApp Legal</a>
+                <a href="https://imo.im/contact/" class="link">IMO Support</a>
+            </div>
+
+            <div class="box">
+                <div class="scan-line"></div>
+                <h3>💻 Microsoft, Apple, Amazon</h3>
+                <a href="https://www.microsoft.com/en-us/concern/AccountReinstatement" class="link">MS: Account Appeal</a>
+                <a href="https://support.apple.com/en-us/HT204084" class="link">Apple: Report Scam</a>
+                <a href="https://www.amazon.com/report/infringement" class="link">Amazon: Infringement</a>
+                <a href="https://www.reddit.com/report" class="link">Reddit: Report</a>
+                <a href="https://dis.gd/report" class="link">Discord: Abuse</a>
+                <a href="https://www.paypal.com/us/security/report-fraud" class="link">PayPal: Fraud</a>
+            </div>
+
+            <div class="box">
+                <div class="scan-line"></div>
+                <h3>📞 Official Live Complain</h3>
+                <a href="#" class="link">Bkash</a>
+                <a href="#" class="link">Nagad</a>
+                <a href="#" class="link">My GP</a>
+                <a href="#" class="link">Robi</a>
+                <a href="#" class="link">Airtel</a>
+                <a href="#" class="link">Banglalink</a>
+                <a href="#" class="link">BD Cyber Crime</a>
+            </div>
+        </div>
+
+        <footer>
+            © 2026-2027 MV SHAKER ARMANI | ALL RIGHTS SECURED
+        </footer>
+    </div>
+
+    <script>
+        // Matrix Rain
+        const canvas = document.getElementById('matrix');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        const letters = "0101010101ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        const fontSize = 16;
+        const columns = canvas.width / fontSize;
+        const drops = Array(Math.floor(columns)).fill(1);
+
+        function draw() {
+            ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = "#0f0";
+            ctx.font = fontSize + "px Courier New";
+            for (let i = 0; i < drops.length; i++) {
+                const text = letters[Math.floor(Math.random() * letters.length)];
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
+                drops[i]++;
+            }
+        }
+        setInterval(draw, 50);
+
+        function unlock() {
+            const p = document.getElementById('pass').value;
+            if(p === 'SHAKERCEO') {
+                document.getElementById('lock-screen').style.opacity = '0';
+                setTimeout(() => {
+                    document.getElementById('lock-screen').style.display = 'none';
+                    document.getElementById('main-content').style.display = 'block';
+                    setTimeout(() => document.getElementById('main-content').style.opacity = '1', 100);
+                }, 1500);
+            } else { alert('WRONG KEY'); }
+        }
+    </script>
+</body>
+</html>
